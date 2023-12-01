@@ -98,3 +98,12 @@ class MultiHeadAttention(nn.Module):
         context = context.transpose(1, 2).contiguous().view(batch_size, -1, self.d_model)
 
         return context
+
+# Defining vocabulary size and other model parameters
+vocab_size = 50000  # Replace with actual vocabulary size
+model = GPT2(vocab_size=vocab_size)
+
+
+# Performing a sample prediction
+input_ids = torch.tensor([[1, 2, 3, 4, 5]])  # Replace with actual input sequence
+output_logits = model(input_ids)
