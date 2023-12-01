@@ -1,0 +1,32 @@
+GPT-2 Model Implementation Report
+Introduction
+In this report, I document the implementation of the GPT-2 model using Python and PyTorch. The goal was to create a GPT-2 model with 125 million parameters, focusing on key aspects such as multi-head self-attention, feed-forward networks, and positional encoding. The implementation follows the architecture described in the GPT-2 paper's Sections 1 and 2. Additionally, I referred to Andrej Karpathy’s nanogpt repository and the makemore series for guidance.
+
+Implementation Details
+GPT-2 Model Architecture
+Token Embeddings: Utilized nn.Embedding in PyTorch to create token embeddings for vocabulary tokens.
+Positional Embeddings: Employed nn.Embedding for positional embeddings and added them to token embeddings to incorporate positional information.
+Transformer Encoder: Developed the Transformer Encoder using stacked EncoderLayers with multi-head self-attention and feed-forward networks.
+Encoder Layer: Implemented each EncoderLayer consisting of multi-head self-attention and feed-forward networks, followed by layer normalization.
+Multi-head Self-Attention: Developed a separate module for multi-head self-attention following the scaled dot-product attention mechanism.
+Testing and Validation
+Model Instantiation: Created an instance of the GPT-2 model with a specified vocabulary size.
+Checkpoint Loading: Loaded original GPT-2 125M model checkpoints using PyTorch's load_state_dict() function.
+Sample Prediction: Generated sample predictions using the loaded checkpoints to verify the correctness of the model.
+Challenges Encountered
+Challenges:
+Understanding Positional Encoding: Initially faced challenges in grasping the concept of positional encoding and incorporating it into the model.
+Handling Checkpoint Loading: Encountered issues while loading the original GPT-2 checkpoints due to mismatches in model architecture and checkpoint keys.
+Solutions:
+Positional Encoding: Studied the original GPT-2 paper's descriptions and external resources to gain a deeper understanding of positional encoding and successfully implemented it in the model.
+Checkpoint Loading: Carefully matched the keys of the loaded checkpoints to the corresponding model parameters and resolved discrepancies in model architecture for successful loading.
+Results and Validation
+Model Functionality: The implemented GPT-2 model successfully generated predictions and exhibited functionality similar to the original GPT-2 architecture.
+Sample Predictions: Sample predictions showed coherent outputs, indicating that the model was learning and predicting sequences effectively.
+Conclusion
+The implementation of the GPT-2 model encompassed key components such as multi-head self-attention, feed-forward networks, and positional encoding. By following architectural descriptions, referring to relevant resources, and overcoming encountered challenges, a functional GPT-2 model with 125 million parameters was created in PyTorch.
+
+References
+GPT-2 Paper: Link to the GPT-2 Paper
+nanogpt Repository: Link to Andrej Karpathy’s nanogpt repository
+makemore Series: Link to the makemore series
