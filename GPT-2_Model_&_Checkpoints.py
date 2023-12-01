@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 
-# Define the GPT-2 model class
+# Defining the GPT-2 model class
 class GPT2(nn.Module):
     def __init__(self, vocab_size, d_model=768, num_heads=12, num_layers=12, max_sequence_len=1024):
         super(GPT2, self).__init__()
@@ -35,7 +35,7 @@ class GPT2(nn.Module):
 
         return logits
 
-# Define the Encoder layer with multi-head self-attention and feed-forward network
+# Defining the Encoder layer with multi-head self-attention and feed-forward network
 class EncoderLayer(nn.Module):
     def __init__(self, d_model=768, num_heads=12):
         super(EncoderLayer, self).__init__()
@@ -61,7 +61,7 @@ class EncoderLayer(nn.Module):
 
         return output
 
-# Define the Multi-head Self-Attention mechanism
+# Defining the Multi-head Self-Attention mechanism
 class MultiHeadAttention(nn.Module):
     def __init__(self, d_model=768, num_heads=12):
         super(MultiHeadAttention, self).__init__()
